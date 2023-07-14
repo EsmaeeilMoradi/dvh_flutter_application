@@ -24,7 +24,16 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     switch (index) {
                       case 0:
-                        return Container();
+                        return Container(
+                          height: 56,
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/img/dvh_logo.png',
+                            fit: BoxFit.fitHeight,
+                            height: 24,
+                          ),
+                        );
+
                       default:
                         return Container();
                     }
