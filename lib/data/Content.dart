@@ -12,8 +12,8 @@ class ContentEntity {
   final String publishedAt;
   final int price;
   final String description;
-  final int? viewCount;
-  final String? author;
+  // final int? viewCount;
+  // final String? author;
 
   ContentEntity.fromJson(Map<String, dynamic> json)
       : id = json['id'],
@@ -21,8 +21,8 @@ class ContentEntity {
         createdAt = json['createdAt'],
         updatedAt = json['updatedAt'],
         publishedAt = json['publishedAt'],
-        price = json['price'],
-        description = json['description'],
-        viewCount = json['viewCount'],
-        author = json['author'];
+        price = 0,
+        description = json['description'];
+        // viewCount = json['viewCount'],
+        // author = json['author'];
 }
