@@ -48,7 +48,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark(),
-      home: const MyHomePage(title: 'DVH جامعه فارسی زبانان '),
+      home: const MyHomePage(
+        
+        title: 'DVH جامعه فارسی زبانان '),
     );
   }
 }
