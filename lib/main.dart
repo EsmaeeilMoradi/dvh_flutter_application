@@ -1,3 +1,4 @@
+import 'package:dvh_flutter_application/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const defaultTextStyle = TextStyle(
+        fontFamily: 'IranYekan', color: LightThemeColors.primaryTextColor);
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -28,10 +32,23 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: TextTheme(
+            bodyText2: defaultTextStyle,
+            caption: defaultTextStyle.apply(
+                color: LightThemeColors.secondaryTextColor),
+            headline6: defaultTextStyle.copyWith(fontWeight: FontWeight.bold)),
+
+        //  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: const ColorScheme.light(
+          primary: LightThemeColors.primaryColor,
+          secondary: LightThemeColors.secondaryColor,
+          onSecondary: Colors.white,
+        ),
+
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      darkTheme: ThemeData.dark(),
+      home: const MyHomePage(title: 'DVH جامعه فارسی زبانان '),
     );
   }
 }
@@ -106,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'دکمه ی پلاس را لمس نمایید',
             ),
             Text(
               '$_counter',
