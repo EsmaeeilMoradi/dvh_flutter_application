@@ -1,13 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:dvh_flutter_application/common/exception.dart';
 import 'package:dvh_flutter_application/data/Content.dart';
+import 'package:dvh_flutter_application/data/common/http_response_validator.dart';
 
 abstract class IContentDataSource {
   Future<List<ContentEntity>> getAll(int sort);
   Future<List<ContentEntity>> search(String searchTerm);
 }
 
-class ContentRemoteDataSource implements IContentDataSource {
+class ContentRemoteDataSource
+    with HttpResponseValidator
+    implements IContentDataSource {
   final Dio httpClient;
 
   ContentRemoteDataSource(this.httpClient);
@@ -31,11 +33,5 @@ class ContentRemoteDataSource implements IContentDataSource {
       products.add(ContentEntity.fromJson(element));
     });
     return products;
-  }
-
-  validateResponse(Response response) {
-    if (response.statusCode != 200) {
-      throw AppException();
-    }
   }
 }

@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
+import 'package:dvh_flutter_application/common/http_client.dart';
 import 'package:dvh_flutter_application/data/Content.dart';
 import 'package:dvh_flutter_application/data/source/content_data_source.dart';
 
-final httpClient = Dio(BaseOptions(baseUrl: 'http://DVHURL.com/api/v?/'));
 
 
 final contentRepository =

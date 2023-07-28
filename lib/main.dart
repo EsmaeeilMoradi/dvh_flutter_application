@@ -1,5 +1,5 @@
 import 'package:dvh_flutter_application/theme.dart';
-import 'package:dvh_flutter_application/ui/HomeScreen.dart';
+import 'package:dvh_flutter_application/ui/home/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
