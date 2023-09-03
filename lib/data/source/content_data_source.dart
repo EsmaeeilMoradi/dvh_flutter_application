@@ -3,7 +3,7 @@ import 'package:dvh_flutter_application/data/Content.dart';
 import 'package:dvh_flutter_application/data/common/http_response_validator.dart';
 
 abstract class IContentDataSource {
-  Future<List<ContentEntity>> getAll(int sort);
+  Future<List<ContentEntity>> getAll(String sort);
   Future<List<ContentEntity>> search(String searchTerm);
 }
 
@@ -14,8 +14,8 @@ class ContentRemoteDataSource
 
   ContentRemoteDataSource(this.httpClient);
   @override
-  Future<List<ContentEntity>> getAll(int sort) async {
-    final response = await httpClient.get('product/list?sort=$sort');
+  Future<List<ContentEntity>> getAll(String sort) async {
+    final response = await httpClient.get('products?sort=$sort');
     validateResponse(response);
     final products = <ContentEntity>[];
     (response.data as List).forEach((element) {

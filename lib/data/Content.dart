@@ -1,18 +1,28 @@
 class ContentSort {
-  static const int latestVideos = 0;
-  static const int latestPodcasts = 1;
-  static const int latestSourcecode = 2;
+  static const String latestVideos = "video";
+  static const String latestPodcasts = "podcast";
+  static const String latestSourcecode = "repo";
 }
 
 class ContentEntity {
   final int id;
-  final String title;
-  final String imageUrl;
-  final int view;
+  final String name;
+  final String createdAt;
+  final String updatedAt;
+  final String publishedAt;
+  final int price;
+  final String description;
+  final int? viewCount;
+  final String? author;
 
   ContentEntity.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        title = json['title'],
-        imageUrl = json['image'],
-        view = json['view'];
+        name = json['name'],
+        createdAt = json['createdAt'],
+        updatedAt = json['updatedAt'],
+        publishedAt = json['publishedAt'],
+        price = json['price'],
+        description = json['description'],
+        viewCount = json['viewCount'],
+        author = json['author'];
 }
