@@ -1,7 +1,7 @@
 class ContentSort {
-  static const String latestVideos = "video";
-  static const String latestPodcasts = "podcast";
-  static const String latestSourcecode = "repo";
+  static const String latestVideos = "filters[type][slug]=videos&populate=author";
+  static const String latestPodcasts = "filters[type][slug]=podcasts&populate=author";
+  static const String latestSourcecode = "filters[type][slug]=repositories&populate=author";
 }
 
 class ContentEntity {

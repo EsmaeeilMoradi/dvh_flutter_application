@@ -15,7 +15,7 @@ class ContentRemoteDataSource
   ContentRemoteDataSource(this.httpClient);
   @override
   Future<List<ContentEntity>> getAll(String sort) async {
-    final response = await httpClient.get('products?sort=$sort');
+    final response = await httpClient.get('products?$sort');
     validateResponse(response);
     final products = <ContentEntity>[];
     (response.data as List).forEach((element) {
